@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:remove="all">Order Confirmation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+<div>
+ <h2 th:text="${title}">>title</h2>
+ <p th:text="${description}">description</p>
+</div>
+<div>
+	<table>
+		<tr>
+			<th>desc</th><th>firstname</th><th>lastname</th>
+		</tr>
+		<tr th:each="obj : ${publish}">
+		   <td th:text="${obj.designation}"></td>
+		   <td th:text="${obj.firstname}"></td>
+		   <td th:text="${obj.lastname}"></td>
+		</tr>
+	</table>
+</div> 
+</body>
+</html>
